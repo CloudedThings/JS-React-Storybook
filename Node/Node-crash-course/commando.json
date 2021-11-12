@@ -1,0 +1,12 @@
+{		
+    "timestamp": 123214987,
+    "lights" : 1,		
+    "honk" : 1,
+    "door" : 0,
+    "panic": 1,
+    "heat": 0,
+    "AC": 0,
+    "trunk": 0,
+    "getDest": 0
+}		
+
