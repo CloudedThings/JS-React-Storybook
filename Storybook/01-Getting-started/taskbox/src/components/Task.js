@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function Task({ task: { id, title, state }, onArchiveTask, onPinTask }) {
   return (
@@ -20,10 +21,20 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
         {state !== 'TASK_ARCHIVED' && (
           // eslint-disable-next-line jsx-a11y/anchor-is-valid
           <a onClick={() => onPinTask(id)}>
-            <span className={`icon-star`} />
+            <span className={`icon-star`} id={`pinTask-${id}`} aria-label={`pinTask-${id}`} />
           </a>
         )}
       </div>
     </div>
   );
 }
+
+Task.propTypes = {
+  task: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired
+  }),
+  onArchiveTask: PropTypes.func,
+  onPinTask: PropTypes.func
+};
