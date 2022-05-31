@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap';
+import { Row, Col, ListGroup, Image, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import CheckoutSteps from '../components/CheckoutSteps';
 import { getOrderDetails } from '../actions/orderActions';
 
 const OrderScreen = ({ match }) => {
@@ -39,7 +38,7 @@ const OrderScreen = ({ match }) => {
       <h1>Order {order._id}</h1>
       <Row>
         <Col md={8}>
-          <ListGroup variant='flus'>
+          <ListGroup variant='flush'>
             <ListGroup.Item>
               <h2>Shipping</h2>
               <p>
